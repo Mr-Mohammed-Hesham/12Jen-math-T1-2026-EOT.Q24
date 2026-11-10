@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📝 Written Exam: Exponential Equations - رياضيات 12 عام | Mr. Mohammed Hesham</title>
+<meta name="description" content="امتحان كتابي (مقالي) عن حل المعادلات الأسية - صف 12 عام">
+<meta name="author" content="Mr. Mohammed Hesham">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Cairo', sans-serif; background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); }
+body.en-mode { font-family: 'Inter', sans-serif; direction: ltr; }
+.arabic-math { font-family: 'Amiri', 'Cairo', serif; }
+.math-display { display: inline-block; direction: ltr; font-family: 'Amiri', serif; font-size: 1.15em; padding: 2px 8px; background: #ede9fe; border-radius: 4px; margin: 2px; color: #5b21b6; font-weight: 700; }
+.save-indicator { position: fixed; bottom: 20px; left: 20px; z-index: 200; background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+body.en-mode .save-indicator { left: auto; right: 20px; }
+.save-indicator.show { opacity: 1; }
+.lang-switch { position: fixed; top: 16px; left: 16px; z-index: 100; background: white; padding: 6px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); display: flex; gap: 4px; border: 2px solid #7c3aed; }
+body.en-mode .lang-switch { left: auto; right: 16px; }
+.lang-btn { padding: 6px 14px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s; border: none; font-size: 0.875rem; background: transparent; color: #6b7280; }
+.lang-btn.active { background: #7c3aed; color: white; box-shadow: 0 2px 6px rgba(124,58,237,0.4); }
+.timer-warning { color: #dc2626 !important; animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: 0.7; } }
+@media print { .no-print { display: none !important; } .model-box { display: none !important; } textarea { border: 1px solid #9ca3af !important; } }
+.svg-graph { display: block; margin: 12px auto; background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 8px; max-width: 100%; }
+.graph-container { text-align: center; margin: 10px 0; }
+.q-card { background: white; border: 2px solid #7c3aed; border-radius: 16px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.q-statement { background: #ede9fe; border: 2px solid #7c3aed; border-radius: 8px; padding: 12px; font-size: 1.05rem; font-weight: 700; color: #4c1d95; }
+.answer-area { width: 100%; min-height: 170px; border: 2px solid #7c3aed; border-radius: 10px; background: #f5f3ff; padding: 12px; font-family: 'Cairo', sans-serif; font-size: 1rem; line-height: 2; background-image: repeating-linear-gradient(transparent, transparent 31px, #94a3b8 32px); resize: vertical; }
+.answer-area:focus { outline: none; border-color: #d97706; background-color: #fefce8; }
+.model-box { background: #f0fdf4; border: 2px solid #16a34a; border-radius: 10px; padding: 14px; margin-top: 12px; }
+.model-step { padding: 6px 10px; border-bottom: 1px dashed #86efac; font-family: 'Amiri', serif; direction: ltr; text-align: left; font-size: 1.05rem; color: #14532d; }
+.model-step .step-no { display: inline-block; background: #16a34a; color: white; border-radius: 50%; width: 22px; height: 22px; text-align: center; font-size: 0.8rem; line-height: 22px; margin-right: 8px; font-family: 'Cairo', sans-serif; }
+.final-answer { background: #dcfce7; border: 2px solid #16a34a; border-radius: 8px; padding: 10px; margin-top: 10px; text-align: center; font-weight: 800; color: #166534; font-size: 1.1rem; font-family: 'Amiri', serif; direction: ltr; }
+.rubric-chip { display: inline-block; background: #ede9fe; border: 1px solid #7c3aed; color: #5b21b6; border-radius: 14px; padding: 2px 10px; font-size: 0.75rem; margin: 2px; font-weight: 600; }
+.score-input { width: 70px; border: 2px solid #7c3aed; border-radius: 8px; padding: 6px; text-align: center; font-weight: 800; font-size: 1.1rem; color: #5b21b6; background: #f5f3ff; }
+.check-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #374151; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 4px 10px; }
+.section-head { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; border-radius: 12px; padding: 10px 20px; font-weight: 800; font-size: 1.15rem; margin: 30px 0 18px; box-shadow: 0 4px 10px rgba(109,40,217,0.3); }
+</style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+<div class="lang-switch no-print">
+<button class="lang-btn active" onclick="setLanguage('ar')" id="btn-ar">عربي</button>
+<button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+</div>
+
+<div id="saveIndicator" class="save-indicator">💾 <span data-ar="تم الحفظ" data-en="Saved">تم الحفظ</span></div>
+
+<div id="timer-container" class="max-w-4xl mx-auto mb-4 text-center no-print">
+<div class="bg-white p-4 rounded-2xl shadow-lg inline-block border-2 border-violet-100">
+<span class="text-gray-600 ml-2">⏰ <span data-ar="الوقت المتبقي:" data-en="Time Left:">الوقت المتبقي:</span></span>
+<span id="timer" class="text-2xl font-bold text-violet-700 font-mono">60:00</span>
+<span class="ml-3 inline-block bg-violet-700 text-white px-3 py-1 rounded-full text-xs font-bold">📝 <span data-ar="امتحان كتابي (مقالي)" data-en="Written Exam">امتحان كتابي (مقالي)</span> - 10 <span data-ar="مسائل" data-en="Problems">مسائل</span></span>
+</div>
+</div>
+
+<div class="max-w-4xl mx-auto mb-6 flex flex-wrap gap-3 justify-center no-print">
+<button onclick="toggleAllModels()" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-xl font-medium transition shadow">🔑 <span data-ar="إظهار/إخفاء الحلول النموذجية" data-en="Show/Hide Model Solutions">إظهار/إخفاء الحلول النموذجية</span></button>
+<button onclick="gradeExam()" class="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2 rounded-xl font-medium transition shadow">🧮 <span data-ar="احتساب المجموع" data-en="Compute Total">احتساب المجموع</span></button>
+<button onclick="window.print()" class="bg-gray-700 hover:bg-gray-900 text-white px-5 py-2 rounded-xl font-medium transition shadow">🖨️ <span data-ar="طباعة" data-en="Print">طباعة</span></button>
+<button onclick="clearProgress()" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-xl font-medium transition shadow">🗑️ <span data-ar="مسح المحفوظ" data-en="Clear Saved">مسح المحفوظ</span></button>
+</div>
+
+<header class="max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-2xl mb-6 border-4 border-violet-500">
+<div class="text-center">
+<div class="inline-block bg-violet-700 text-white px-6 py-2 rounded-full text-sm font-bold mb-4">MATH GRADE 12 GENERAL - QUESTION 24 (WRITTEN)</div>
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">📝 <span data-ar="حل المعادلات الأسية" data-en="Solving Exponential Equations">حل المعادلات الأسية</span></h1>
+<h2 class="text-xl text-violet-700 font-semibold mb-2"><span data-ar="القسم الثاني: الأسئلة المقالية - ص 218 (تمارين 9، 10، 12، 13)" data-en="Part Two: Written - Page 218 (Exercises 9, 10, 12, 13)">القسم الثاني: الأسئلة المقالية - ص 218 (تمارين 9، 10، 12، 13)</span></h2>
+<p class="text-gray-600 mb-3"><span data-ar="وحّد الأساس في الطرفين، ثم ساوِ الأسّين، ثم حل المعادلة الخطية الناتجة" data-en="Unify the base on both sides, equate the exponents, then solve the resulting linear equation">وحّد الأساس في الطرفين، ثم ساوِ الأسّين، ثم حل المعادلة الخطية الناتجة</span></p>
+<p class="text-sm text-green-700 font-semibold">💾 <span data-ar="يُحفظ حلّك تلقائياً" data-en="Auto-saves while typing">يُحفظ حلّك تلقائياً</span> | 📊 <span data-ar="كل مسألة 10 درجات — المجموع 100" data-en="10 pts each — Total 100">كل مسألة 10 درجات — المجموع 100</span></p>
+</div>
+<div class="mt-5 flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+<span>📅 <span data-ar="التاريخ:" data-en="Date:">التاريخ:</span> <input type="text" id="examDate" class="border-b-2 border-violet-300 bg-transparent w-32 text-center"></span>
+<span>😊 <span data-ar="الاسم:" data-en="Name:">الاسم:</span> <input type="text" id="studentName" class="border-b-2 border-violet-300 bg-transparent w-44 text-center" placeholder="اكتب اسمك"></span>
+<span>🏫 <span data-ar="الشعبة:" data-en="Class:">الشعبة:</span> <input type="text" id="studentClass" class="border-b-2 border-violet-300 bg-transparent w-28 text-center" placeholder="الشعبة"></span>
+</div>
+<div class="mt-5 bg-violet-50 border-2 border-violet-300 rounded-xl p-4 text-sm">
+<p class="font-bold text-violet-800 mb-2 text-center">📋 <span data-ar="معيار التصحيح (10 درجات لكل مسألة):" data-en="Grading Rubric (10 points per problem):">معيار التصحيح (10 درجات لكل مسألة):</span></p>
+<div class="text-center">
+<span class="rubric-chip">3 <span data-ar="درجات: كتابة الطرفين بأساس مشترك" data-en="pts: common base on both sides">درجات: كتابة الطرفين بأساس مشترك</span></span>
+<span class="rubric-chip">3 <span data-ar="درجات: مساواة الأسّين وتكوين معادلة خطية" data-en="pts: equating exponents → linear equation">درجات: مساواة الأسّين وتكوين معادلة خطية</span></span>
+<span class="rubric-chip">2 <span data-ar="نقطة: حل المعادلة بدقة" data-en="pt: solving accurately">نقطة: حل المعادلة بدقة</span></span>
+<span class="rubric-chip">2 <span data-ar="نقطة: التحقق وصياغة الحل النهائي" data-en="pts: verification & final answer">نقطة: التحقق وصياغة الحل النهائي</span></span>
+</div>
+<p class="text-center text-xs text-violet-700 mt-2 font-bold arabic-math">🔑 الخاصية الأساسية: إذا a^m = a^n (حيث a &gt; 0 و a ≠ 1) فإن m = n</p>
+</div>
+<div id="method-holder" class="mt-4"></div>
+</header>
+
+<main class="max-w-4xl mx-auto" id="exam-content"></main>
+
+<div id="results-panel" class="max-w-4xl mx-auto mt-8 bg-white p-8 rounded-3xl shadow-2xl border-4 border-violet-500 hidden no-print">
+<h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">🏆 <span data-ar="بطاقة النتيجة" data-en="Result Card">بطاقة النتيجة</span> 🏆</h2>
+<div class="grid md:grid-cols-3 gap-4 mb-6">
+<div class="bg-violet-50 p-4 rounded-xl text-center"><p>😊 <span data-ar="الاسم" data-en="Name">الاسم</span></p><p id="res-name" class="font-bold text-xl text-violet-700">-</p></div>
+<div class="bg-purple-50 p-4 rounded-xl text-center"><p>📅 <span data-ar="التاريخ" data-en="Date">التاريخ</span></p><p id="res-date" class="font-bold text-xl text-purple-700">-</p></div>
+<div class="bg-violet-50 p-4 rounded-xl text-center"><p>🌟 <span data-ar="المجموع" data-en="Total">المجموع</span></p><p id="res-total" class="font-bold text-3xl text-violet-700">0 / 100</p></div>
+</div>
+<div class="text-center mb-6">
+<span id="success-badge" class="inline-block px-4 py-1 rounded-full font-bold bg-violet-100 text-violet-800">-</span>
+<p id="success-percent" class="text-4xl font-bold text-violet-700 mt-2">0%</p>
+</div>
+<div class="bg-gray-50 p-5 rounded-xl mb-6">
+<h3 class="font-bold text-lg mb-3 text-gray-800">📊 <span data-ar="درجات المسائل:" data-en="Problem Scores:">درجات المسائل:</span></h3>
+<div class="space-y-2" id="per-problem-scores"></div>
+</div>
+<div class="text-center">
+<button id="sendEmailBtn" onclick="sendResultsToEmail()" class="bg-gradient-to-r from-violet-700 to-purple-600 text-white text-lg px-8 py-3 rounded-2xl font-bold shadow-xl transition">📧 <span data-ar="أرسل الإجابات والدرجات للمعلم" data-en="Send Answers & Scores to Teacher">أرسل الإجابات والدرجات للمعلم</span></button>
+<p id="emailStatus" class="text-sm mt-2 font-medium"></p>
+</div>
+</div>
+
+<footer class="max-w-4xl mx-auto mt-10 mb-8 text-center text-gray-500 text-sm no-print">
+© Written Exam: Exponential Equations - Grade 12 General | Mr. Mohammed Hesham 📝
+</footer>
+
+<script>
+const PUBLIC_KEY = "Rb3Lq8tXaFmc5YHUH";
+const SERVICE_ID = "service_w15m64i";
+const TEMPLATE_ID = "template_5b0u2tq";
+const TARGET_EMAIL = "mohammedhesham872@gmail.com";
+emailjs.init(PUBLIC_KEY);
+
+const STORAGE_KEY = 'written_exponential_eq_g12_v1';
+const TOTAL_TIME = 3600;
+
+let currentLang = 'ar';
+let timeRemaining = TOTAL_TIME;
+let timerInterval = null;
+let modelsVisible = false;
+let studentAnswers = {};
+let studentScores = {};
+let studentChecks = {};
+let saveIndicatorTimeout = null;
+
+// ==================== SVG DIAGRAMS ====================
+const svgGraphs = {
+method_steps: `<svg class="svg-graph" width="480" height="270" viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="260" rx="12" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="14" fill="#5b21b6" font-weight="bold">📋 طريقة حل المعادلات الأسية (4 خطوات)</text>
+<rect x="25" y="42" width="205" height="52" rx="8" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="127" y="62" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="bold">1) وحّد الأساس في الطرفين</text>
+<text x="127" y="80" text-anchor="middle" font-size="10" fill="#5b21b6" font-family="'Amiri',serif">8^(4x+2) = 64 → 8^(4x+2) = 8²</text>
+<path d="M235 68 L250 68" stroke="#7c3aed" stroke-width="2" marker-end="url(#aE)"/>
+<rect x="252" y="42" width="205" height="52" rx="8" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="355" y="62" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="bold">2) ساوِ الأسّين (خاصية 1-1)</text>
+<text x="355" y="80" text-anchor="middle" font-size="10" fill="#5b21b6" font-family="'Amiri',serif">4x + 2 = 2</text>
+<path d="M355 98 L355 112" stroke="#7c3aed" stroke-width="2" marker-end="url(#aE2)"/>
+<rect x="252" y="115" width="205" height="52" rx="8" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="355" y="135" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="bold">3) حل المعادلة الخطية</text>
+<text x="355" y="153" text-anchor="middle" font-size="10" fill="#5b21b6" font-family="'Amiri',serif">4x = 0 → x = 0</text>
+<path d="M250 141 L235 141" stroke="#7c3aed" stroke-width="2" marker-end="url(#aE3)"/>
+<rect x="25" y="115" width="205" height="52" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="127" y="135" text-anchor="middle" font-size="10" fill="#166534" font-weight="bold">4) تحقق بالتعويض</text>
+<text x="127" y="153" text-anchor="middle" font-size="10" fill="#166534" font-family="'Amiri',serif">8^(0+2) = 8² = 64 ✓</text>
+<rect x="25" y="180" width="432" height="72" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="200" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">💡 كيف تختار الأساس المشترك؟</text>
+<text x="240" y="218" text-anchor="middle" font-size="10" fill="#92400e" font-family="'Amiri',serif">64 = 8² = 4³ = 2⁶ | 125 = 5³ | 256 = 4⁴ = 2⁸ | 81 = 3⁴ = 9²</text>
+<text x="240" y="236" text-anchor="middle" font-size="10" fill="#92400e" font-family="'Amiri',serif">9 = 3² ، 27 = 3³ | والأساس الكسري: 1/2 = 2⁻¹ ، 1/3 = 3⁻¹</text>
+<defs>
+<marker id="aE" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#7c3aed"/></marker>
+<marker id="aE2" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto"><path d="M0,0 L8,0 L4,7 z" fill="#7c3aed"/></marker>
+<marker id="aE3" markerWidth="8" markerHeight="8" refX="1" refY="3" orient="auto"><path d="M8,0 L8,6 L1,3 z" fill="#7c3aed"/></marker>
+</defs>
+</svg>`,
+
+property_graph: `<svg class="svg-graph" width="480" height="280" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="270" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="bold">📈 لماذا يجوز مساواة الأسّين؟ (خاصية الواحد لواحد)</text>
+<line x1="60" y1="230" x2="440" y2="230" stroke="#374151" stroke-width="2"/>
+<line x1="90" y1="250" x2="90" y2="40" stroke="#374151" stroke-width="2"/>
+<text x="445" y="235" font-size="11" fill="#374151" font-weight="bold">x</text>
+<text x="80" y="36" font-size="11" fill="#374151" font-weight="bold">y</text>
+<path d="M 95 226 C 160 222 220 210 270 180 C 320 148 360 100 400 50" fill="none" stroke="#2563eb" stroke-width="3"/>
+<text x="405" y="45" font-size="10" fill="#2563eb" font-weight="bold">y = 2ˣ</text>
+<line x1="90" y1="120" x2="352" y2="120" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="100" y="112" font-size="10" fill="#dc2626" font-weight="bold">y = 8</text>
+<circle cx="352" cy="120" r="6" fill="#dc2626"/>
+<line x1="352" y1="120" x2="352" y2="230" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="352" y="248" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">x = 3 فقط!</text>
+<rect x="60" y="255" width="360" height="0" rx="4" fill="none"/>
+<rect x="240" y="60" width="195" height="80" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="337" y="80" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">الدالة الأسية رتيبة (تزايدية)</text>
+<text x="337" y="98" text-anchor="middle" font-size="10" fill="#1e40af">كل قيمة y تقابلها قيمة x واحدة</text>
+<text x="337" y="116" text-anchor="middle" font-size="10" fill="#1e40af" font-family="'Amiri',serif">2^m = 2^n  ⇒  m = n</text>
+<text x="337" y="132" text-anchor="middle" font-size="9" fill="#1e40af">(لأن a &gt; 0 و a ≠ 1)</text>
+</svg>`,
+
+powers_table: `<svg class="svg-graph" width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="250" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="13" fill="#065f46" font-weight="bold">🔢 جدول القوى المفيد (اختر الأساس المشترك)</text>
+<g font-family="'Amiri',serif" font-size="11" text-anchor="middle">
+<rect x="25" y="42" width="60" height="30" fill="#d1fae5" stroke="#10b981" stroke-width="2"/><text x="55" y="62" fill="#065f46" font-weight="bold">العدد</text>
+<rect x="85" y="42" width="120" height="30" fill="#d1fae5" stroke="#10b981" stroke-width="2"/><text x="145" y="62" fill="#065f46" font-weight="bold">كقوة للأساس 2</text>
+<rect x="205" y="42" width="120" height="30" fill="#d1fae5" stroke="#10b981" stroke-width="2"/><text x="265" y="62" fill="#065f46" font-weight="bold">كقوة للأساس 3</text>
+<rect x="325" y="42" width="130" height="30" fill="#d1fae5" stroke="#10b981" stroke-width="2"/><text x="390" y="62" fill="#065f46" font-weight="bold">كقوة لأساس آخر</text>
+<rect x="25" y="72" width="60" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="55" y="91" fill="#065f46">8</text>
+<rect x="85" y="72" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="145" y="91" fill="#065f46">2³</text>
+<rect x="205" y="72" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="265" y="91" fill="#9ca3af">—</text>
+<rect x="325" y="72" width="130" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="390" y="91" fill="#065f46">8 = 8¹</text>
+<rect x="25" y="100" width="60" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="55" y="119" fill="#065f46">64</text>
+<rect x="85" y="100" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="145" y="119" fill="#065f46">2⁶</text>
+<rect x="205" y="100" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="265" y="119" fill="#9ca3af">—</text>
+<rect x="325" y="100" width="130" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="390" y="119" fill="#065f46">8² ، 4³</text>
+<rect x="25" y="128" width="60" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="55" y="147" fill="#065f46">256</text>
+<rect x="85" y="128" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="145" y="147" fill="#065f46">2⁸</text>
+<rect x="205" y="128" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="265" y="147" fill="#9ca3af">—</text>
+<rect x="325" y="128" width="130" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="390" y="147" fill="#065f46" font-weight="bold">4⁴ ، 16²</text>
+<rect x="25" y="156" width="60" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="55" y="175" fill="#065f46">81</text>
+<rect x="85" y="156" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="145" y="175" fill="#9ca3af">—</text>
+<rect x="205" y="156" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="265" y="175" fill="#065f46" font-weight="bold">3⁴</text>
+<rect x="325" y="156" width="130" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="390" y="175" fill="#065f46">9²</text>
+<rect x="25" y="184" width="60" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="55" y="203" fill="#065f46">125</text>
+<rect x="85" y="184" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="145" y="203" fill="#9ca3af">—</text>
+<rect x="205" y="184" width="120" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="265" y="203" fill="#9ca3af">—</text>
+<rect x="325" y="184" width="130" height="28" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/><text x="390" y="203" fill="#065f46" font-weight="bold">5³</text>
+</g>
+<rect x="25" y="220" width="430" height="28" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="239" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">💡 اختر أصغر أساس مشترك: 256 و 4 → الأساس 4 أسهل من 2!</text>
+</svg>`,
+
+example_q99: `<svg class="svg-graph" width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="240" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="13" fill="#92400e" font-weight="bold">📝 حل السؤال 99: 8^(4x+2) = 64</text>
+<rect x="25" y="42" width="430" height="40" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="60" text-anchor="middle" font-size="11" fill="#92400e" font-weight="bold">الطريقة 1 (الأساس 8): 64 = 8²</text>
+<text x="240" y="76" text-anchor="middle" font-size="11" fill="#92400e" font-family="'Amiri',serif">8^(4x+2) = 8²  →  4x + 2 = 2  →  x = 0</text>
+<rect x="25" y="90" width="430" height="40" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="108" text-anchor="middle" font-size="11" fill="#92400e" font-weight="bold">الطريقة 2 (الأساس 2): 8 = 2³ ، 64 = 2⁶</text>
+<text x="240" y="124" text-anchor="middle" font-size="11" fill="#92400e" font-family="'Amiri',serif">2^(3(4x+2)) = 2⁶  →  12x + 6 = 6  →  x = 0 ✓ نفس الناتج</text>
+<rect x="25" y="138" width="430" height="40" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="240" y="156" text-anchor="middle" font-size="11" fill="#166534" font-weight="bold">التحقق: 8^(4·0+2) = 8² = 64 ✓</text>
+<text x="240" y="172" text-anchor="middle" font-size="10" fill="#166534">الحل: x = 0</text>
+<rect x="25" y="186" width="430" height="44" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="240" y="204" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="bold">⚠️ خطأ شائع: مساواة الأس مع العدد نفسه (4x+2 = 64)</text>
+<text x="240" y="222" text-anchor="middle" font-size="10" fill="#991b1b">الصواب: حوّل 64 إلى قوة أساسها 8 أولاً ثم ساوِ الأسّين</text>
+</svg>`,
+
+example_q102: `<svg class="svg-graph" width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="250" rx="12" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="13" fill="#9f1239" font-weight="bold">📝 حل السؤال 102: 9^(3c+1) = 27^(3c-1)</text>
+<rect x="25" y="42" width="430" height="38" rx="8" fill="#fbcfe8" stroke="#ec4899" stroke-width="2"/>
+<text x="240" y="60" text-anchor="middle" font-size="11" fill="#9f1239" font-weight="bold">1) الأساس المشترك: 9 = 3² ، 27 = 3³</text>
+<text x="240" y="75" text-anchor="middle" font-size="10" fill="#9f1239" font-family="'Amiri',serif">(3²)^(3c+1) = (3³)^(3c-1)</text>
+<rect x="25" y="88" width="430" height="38" rx="8" fill="#fbcfe8" stroke="#ec4899" stroke-width="2"/>
+<text x="240" y="106" text-anchor="middle" font-size="11" fill="#9f1239" font-weight="bold">2) اضرب الأسس: (a^m)^n = a^(m·n)</text>
+<text x="240" y="121" text-anchor="middle" font-size="10" fill="#9f1239" font-family="'Amiri',serif">3^(6c+2) = 3^(9c-3)</text>
+<rect x="25" y="134" width="430" height="38" rx="8" fill="#fbcfe8" stroke="#ec4899" stroke-width="2"/>
+<text x="240" y="152" text-anchor="middle" font-size="11" fill="#9f1239" font-weight="bold">3) ساوِ الأسّين وحل:</text>
+<text x="240" y="167" text-anchor="middle" font-size="10" fill="#9f1239" font-family="'Amiri',serif">6c + 2 = 9c - 3  →  5 = 3c  →  c = 5/3</text>
+<rect x="25" y="180" width="430" height="38" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="240" y="198" text-anchor="middle" font-size="11" fill="#166534" font-weight="bold">4) التحقق: 9⁶ = 3¹² و 27⁴ = 3¹² ✓</text>
+<text x="240" y="213" text-anchor="middle" font-size="10" fill="#166534">الحل: c = 5/3 ≈ 1.67</text>
+<rect x="25" y="224" width="430" height="24" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="240" text-anchor="middle" font-size="9" fill="#92400e" font-weight="bold">💡 الناتج كسر طبيعي — لا تخف من الكسور في المعادلات الأسية!</text>
+</svg>`,
+
+fractional_base: `<svg class="svg-graph" width="480" height="240" viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="230" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="13" fill="#991b1b" font-weight="bold">➗ الأساسات الكسرية: حوّلها إلى أس سالب</text>
+<rect x="25" y="42" width="210" height="60" rx="8" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+<text x="130" y="62" text-anchor="middle" font-size="11" fill="#991b1b" font-family="'Amiri',serif" font-weight="bold">1/2 = 2⁻¹</text>
+<text x="130" y="80" text-anchor="middle" font-size="10" fill="#991b1b" font-family="'Amiri',serif">(1/2)^(3x-4) = 2^(-(3x-4))</text>
+<text x="130" y="96" text-anchor="middle" font-size="10" fill="#991b1b" font-family="'Amiri',serif">= 2^(4-3x)</text>
+<rect x="245" y="42" width="210" height="60" rx="8" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+<text x="350" y="62" text-anchor="middle" font-size="11" fill="#991b1b" font-family="'Amiri',serif" font-weight="bold">1/3 = 3⁻¹</text>
+<text x="350" y="80" text-anchor="middle" font-size="10" fill="#991b1b" font-family="'Amiri',serif">(1/3)^(x+2) = 3^(-(x+2))</text>
+<text x="350" y="96" text-anchor="middle" font-size="10" fill="#991b1b" font-family="'Amiri',serif">و 27 = 3³</text>
+<rect x="25" y="112" width="430" height="52" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="132" text-anchor="middle" font-size="11" fill="#92400e" font-weight="bold">مثال: (1/3)^(x+2) = 27</text>
+<text x="240" y="150" text-anchor="middle" font-size="11" fill="#92400e" font-family="'Amiri',serif">3^(-(x+2)) = 3³  →  -(x+2) = 3  →  x = -5</text>
+<rect x="25" y="174" width="430" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="240" y="194" text-anchor="middle" font-size="10" fill="#166534" font-weight="bold">تحقق: (1/3)^(-5+2) = (1/3)^(-3) = 3³ = 27 ✓</text>
+<text x="240" y="212" text-anchor="middle" font-size="9" fill="#166534">⚠️ وزّع الإشارة السالبة على كل حدود الأس: -(x+2) = -x - 2</text>
+</svg>`,
+
+mistakes_exp: `<svg class="svg-graph" width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="5" width="470" height="240" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="26" text-anchor="middle" font-size="13" fill="#92400e" font-weight="bold">⚠️ أخطاء شائعة في المعادلات الأسية</text>
+<rect x="25" y="42" width="430" height="44" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="60" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">1) مساواة الأس بالعدد: 8^(4x+2) = 64 ⇒ 4x+2 = 64 ✗</text>
+<text x="240" y="78" text-anchor="middle" font-size="10" fill="#92400e" font-family="'Amiri',serif">الصواب: 64 = 8² ثم 4x+2 = 2 ✓</text>
+<rect x="25" y="94" width="430" height="44" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="112" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">2) نسيان توزيع الأس عند التحويل: (3²)^(3c+1) = 3^(6c+1) ✗</text>
+<text x="240" y="130" text-anchor="middle" font-size="10" fill="#92400e" font-family="'Amiri',serif">الصواب: 2·(3c+1) = 6c + 2 ✓ (وزّع على الحدين)</text>
+<rect x="25" y="146" width="430" height="44" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="164" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">3) خطأ إشارة الأس السالب: -(3x - 4) = -3x - 4 ✗</text>
+<text x="240" y="182" text-anchor="middle" font-size="10" fill="#92400e" font-family="'Amiri',serif">الصواب: -(3x - 4) = -3x + 4 ✓</text>
+<rect x="25" y="198" width="430" height="36" rx="8" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+<text x="240" y="214" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">4) جمع الأسس عند المساواة: 2^a = 2^b + 2^c لا تعني a = b + c ✗</text>
+<text x="240" y="228" text-anchor="middle" font-size="9" fill="#92400e">الخاصية تعمل فقط عندما يكون كل طرف قوة واحدة!</text>
+</svg>`
+};
+
+// ==================== WRITTEN QUESTIONS ====================
+const QUESTIONS = [
+{ section: 1, svg: 'example_q99',
+  statement: { ar: 'حل المعادلة: <span class="math-display">8^(4x+2) = 64</span>', en: 'Solve: <span class="math-display">8^(4x+2) = 64</span>' },
+  steps: [
+    { ar: 'نكتب 64 بأساس 8: 64 = 8² ⇒ 8^(4x+2) = 8²', en: 'Write 64 in base 8: 64 = 8² ⇒ 8^(4x+2) = 8²' },
+    { ar: 'نساوي الأسّين: 4x + 2 = 2', en: 'Equate exponents: 4x + 2 = 2' },
+    { ar: 'نحل: 4x = 0 ⇒ x = 0', en: 'Solve: 4x = 0 ⇒ x = 0' },
+    { ar: 'تحقق: 8^(0+2) = 8² = 64 ✓', en: 'Check: 8² = 64 ✓' }
+  ],
+  final: { ar: 'x = 0', en: 'x = 0' },
+  check: { ar: 'بديل بأساس 2: 2^(12x+6) = 2⁶ ⇒ 12x = 0 ⇒ x = 0', en: 'Alt base 2: 12x + 6 = 6 ⇒ x = 0' } },
+{ section: 1, svg: 'property_graph',
+  statement: { ar: 'حل المعادلة: <span class="math-display">5^(x-6) = 125</span>', en: 'Solve: <span class="math-display">5^(x-6) = 125</span>' },
+  steps: [
+    { ar: '125 = 5³ ⇒ 5^(x-6) = 5³', en: '125 = 5³ ⇒ 5^(x-6) = 5³' },
+    { ar: 'نساوي الأسّين: x - 6 = 3', en: 'Equate exponents: x - 6 = 3' },
+    { ar: 'نحل: x = 9', en: 'Solve: x = 9' },
+    { ar: 'تحقق: 5^(9-6) = 5³ = 125 ✓', en: 'Check: 5³ = 125 ✓' }
+  ],
+  final: { ar: 'x = 9', en: 'x = 9' },
+  check: { ar: 'الأساسان متساويان مباشرة لأن 125 قوة للعدد 5', en: '125 is already a power of 5' } },
+{ section: 1, svg: 'powers_table',
+  statement: { ar: 'حل المعادلة: <span class="math-display">256^(b+2) = 4^(2-2b)</span>', en: 'Solve: <span class="math-display">256^(b+2) = 4^(2-2b)</span>' },
+  steps: [
+    { ar: '256 = 4⁴ ⇒ 4^(4(b+2)) = 4^(2-2b)', en: '256 = 4⁴ ⇒ 4^(4(b+2)) = 4^(2-2b)' },
+    { ar: 'نساوي الأسّين: 4b + 8 = 2 - 2b', en: 'Equate: 4b + 8 = 2 - 2b' },
+    { ar: '6b = -6 ⇒ b = -1', en: '6b = -6 ⇒ b = -1' },
+    { ar: 'تحقق: 256¹ = 256 و 4^(2+2) = 4⁴ = 256 ✓', en: 'Check: 256¹ = 256 and 4⁴ = 256 ✓' }
+  ],
+  final: { ar: 'b = -1', en: 'b = -1' },
+  check: { ar: 'يمكن أيضاً بأساس 2: 2^(8(b+2)) = 2^(2(2-2b)) ⇒ نفس الناتج', en: 'Base 2 also works: same result' } },
+{ section: 1, svg: 'example_q102',
+  statement: { ar: 'حل المعادلة: <span class="math-display">9^(3c+1) = 27^(3c-1)</span>', en: 'Solve: <span class="math-display">9^(3c+1) = 27^(3c-1)</span>' },
+  steps: [
+    { ar: '9 = 3² ، 27 = 3³ ⇒ 3^(2(3c+1)) = 3^(3(3c-1))', en: '9 = 3², 27 = 3³ ⇒ 3^(2(3c+1)) = 3^(3(3c-1))' },
+    { ar: 'نوزّع: 3^(6c+2) = 3^(9c-3)', en: 'Distribute: 3^(6c+2) = 3^(9c-3)' },
+    { ar: 'نساوي: 6c + 2 = 9c - 3 ⇒ 5 = 3c ⇒ c = 5/3', en: 'Equate: 6c + 2 = 9c - 3 ⇒ c = 5/3' },
+    { ar: 'تحقق: 9⁶ = 3¹² و 27⁴ = 3¹² ✓', en: 'Check: 9⁶ = 3¹² = 27⁴ ✓' }
+  ],
+  final: { ar: 'c = 5/3', en: 'c = 5/3' },
+  check: { ar: 'انتبه لتوزيع الضرب على حدي القوس في الأس', en: 'Distribute multiplication over both terms of the exponent' } },
+{ section: 1, svg: 'mistakes_exp',
+  statement: { ar: 'حل المعادلة: <span class="math-display">81^(a+2) = 3^(3a+1)</span>', en: 'Solve: <span class="math-display">81^(a+2) = 3^(3a+1)</span>' },
+  steps: [
+    { ar: '81 = 3⁴ ⇒ 3^(4(a+2)) = 3^(3a+1)', en: '81 = 3⁴ ⇒ 3^(4(a+2)) = 3^(3a+1)' },
+    { ar: 'نوزّع: 3^(4a+8) = 3^(3a+1)', en: 'Distribute: 3^(4a+8) = 3^(3a+1)' },
+    { ar: 'نساوي: 4a + 8 = 3a + 1 ⇒ a = -7', en: 'Equate: 4a + 8 = 3a + 1 ⇒ a = -7' },
+    { ar: 'تحقق: 81^(-5) = 3^(-20) و 3^(3(-7)+1) = 3^(-20) ✓', en: 'Check: both sides = 3^(-20) ✓' }
+  ],
+  final: { ar: 'a = -7', en: 'a = -7' },
+  check: { ar: 'الأسس السالبة في التحقق طبيعية ولا تدل على خطأ', en: 'Negative exponents in verification are fine' } },
+{ section: 2, svg: 'method_steps',
+  statement: { ar: 'حل المعادلة: <span class="math-display">2^(3x-1) = 32</span>', en: 'Solve: <span class="math-display">2^(3x-1) = 32</span>' },
+  steps: [
+    { ar: '32 = 2⁵ ⇒ 2^(3x-1) = 2⁵', en: '32 = 2⁵ ⇒ 2^(3x-1) = 2⁵' },
+    { ar: 'نساوي: 3x - 1 = 5', en: 'Equate: 3x - 1 = 5' },
+    { ar: '3x = 6 ⇒ x = 2', en: '3x = 6 ⇒ x = 2' },
+    { ar: 'تحقق: 2⁵ = 32 ✓', en: 'Check: 2⁵ = 32 ✓' }
+  ],
+  final: { ar: 'x = 2', en: 'x = 2' },
+  check: { ar: 'أسرع مسألة: الطرف الأيمن قوة جاهزة للأساس 2', en: 'Right side is already a power of 2' } },
+{ section: 2,
+  statement: { ar: 'حل المعادلة: <span class="math-display">4^(2x+1) = 8^(x-1)</span>', en: 'Solve: <span class="math-display">4^(2x+1) = 8^(x-1)</span>' },
+  steps: [
+    { ar: '4 = 2² ، 8 = 2³ ⇒ 2^(2(2x+1)) = 2^(3(x-1))', en: '4 = 2², 8 = 2³ ⇒ 2^(2(2x+1)) = 2^(3(x-1))' },
+    { ar: '2^(4x+2) = 2^(3x-3)', en: '2^(4x+2) = 2^(3x-3)' },
+    { ar: '4x + 2 = 3x - 3 ⇒ x = -5', en: '4x + 2 = 3x - 3 ⇒ x = -5' },
+    { ar: 'تحقق: 4^(-9) = 2^(-18) و 8^(-6) = 2^(-18) ✓', en: 'Check: both = 2^(-18) ✓' }
+  ],
+  final: { ar: 'x = -5', en: 'x = -5' },
+  check: { ar: 'الأساس المشترك الأصغر هنا هو 2', en: 'Smallest common base here is 2' } },
+{ section: 2, svg: 'fractional_base',
+  statement: { ar: 'حل المعادلة: <span class="math-display">(1/2)^(3x-4) = 8^(x+1)</span>', en: 'Solve: <span class="math-display">(1/2)^(3x-4) = 8^(x+1)</span>' },
+  steps: [
+    { ar: '1/2 = 2⁻¹ و 8 = 2³ ⇒ 2^(-(3x-4)) = 2^(3(x+1))', en: '1/2 = 2⁻¹, 8 = 2³ ⇒ 2^(-(3x-4)) = 2^(3(x+1))' },
+    { ar: '2^(4-3x) = 2^(3x+3)', en: '2^(4-3x) = 2^(3x+3)' },
+    { ar: '4 - 3x = 3x + 3 ⇒ 1 = 6x ⇒ x = 1/6', en: '4 - 3x = 3x + 3 ⇒ x = 1/6' },
+    { ar: 'تحقق: الأسّان = 3.5 في الطرفين ✓', en: 'Check: both exponents = 3.5 ✓' }
+  ],
+  final: { ar: 'x = 1/6', en: 'x = 1/6' },
+  check: { ar: 'وزّع السالب: -(3x-4) = -3x + 4 وليس -3x - 4', en: 'Distribute: -(3x-4) = -3x + 4, not -3x - 4' } },
+{ section: 2, svg: 'powers_table',
+  statement: { ar: 'حل المعادلة: <span class="math-display">125^(2x-1) = 25^(x+3)</span>', en: 'Solve: <span class="math-display">125^(2x-1) = 25^(x+3)</span>' },
+  steps: [
+    { ar: '125 = 5³ ، 25 = 5² ⇒ 5^(3(2x-1)) = 5^(2(x+3))', en: '125 = 5³, 25 = 5² ⇒ 5^(3(2x-1)) = 5^(2(x+3))' },
+    { ar: '5^(6x-3) = 5^(2x+6)', en: '5^(6x-3) = 5^(2x+6)' },
+    { ar: '6x - 3 = 2x + 6 ⇒ 4x = 9 ⇒ x = 9/4', en: '6x - 3 = 2x + 6 ⇒ x = 9/4' },
+    { ar: 'تحقق: 5^(10.5) في الطرفين ✓', en: 'Check: both sides = 5^(10.5) ✓' }
+  ],
+  final: { ar: 'x = 9/4 = 2.25', en: 'x = 9/4 = 2.25' },
+  check: { ar: 'الناتج كسر: 9/4 — اتركه كسراً أو عشرياً', en: 'Leave as fraction 9/4 or decimal 2.25' } },
+{ section: 2, svg: 'fractional_base',
+  statement: { ar: 'حل المعادلة: <span class="math-display">(1/3)^(x+2) = 27</span>', en: 'Solve: <span class="math-display">(1/3)^(x+2) = 27</span>' },
+  steps: [
+    { ar: '1/3 = 3⁻¹ و 27 = 3³ ⇒ 3^(-(x+2)) = 3³', en: '1/3 = 3⁻¹, 27 = 3³ ⇒ 3^(-(x+2)) = 3³' },
+    { ar: '-(x + 2) = 3 ⇒ -x - 2 = 3', en: '-(x + 2) = 3 ⇒ -x - 2 = 3' },
+    { ar: '-x = 5 ⇒ x = -5', en: '-x = 5 ⇒ x = -5' },
+    { ar: 'تحقق: (1/3)^(-3) = 3³ = 27 ✓', en: 'Check: (1/3)^(-3) = 27 ✓' }
+  ],
+  final: { ar: 'x = -5', en: 'x = -5' },
+  check: { ar: 'أس سالب داخل أس سالب يعطي موجباً: (3⁻¹)⁻³ = 3³', en: 'Negative of negative: (3⁻¹)⁻³ = 3³' } }
+];
+
+const CHECKLIST = [
+  { ar: 'وحّدت الأساس في الطرفين', en: 'Unified the base on both sides' },
+  { ar: 'ساويت الأسّين وكونت معادلة خطية', en: 'Equated exponents → linear equation' },
+  { ar: 'حللت المعادلة الخطية بدقة', en: 'Solved the linear equation accurately' },
+  { ar: 'تحققت بالتعويض في المعادلة الأصلية', en: 'Verified by substitution' }
+];
+
+// ==================== STATE & STORAGE ====================
+function showSaveIndicator(){const i=document.getElementById('saveIndicator');i.classList.add('show');if(saveIndicatorTimeout)clearTimeout(saveIndicatorTimeout);saveIndicatorTimeout=setTimeout(()=>i.classList.remove('show'),1200)}
+function saveState(show=true){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({lang:currentLang,studentName:document.getElementById('studentName').value,studentClass:document.getElementById('studentClass').value,examDate:document.getElementById('examDate').value,answers:studentAnswers,scores:studentScores,checks:studentChecks,timeRemaining:timeRemaining,savedAt:Date.now()}));if(show)showSaveIndicator()}catch(e){console.error(e)}}
+function loadState(){try{const s=localStorage.getItem(STORAGE_KEY);return s?JSON.parse(s):null}catch(e){return null}}
+function clearProgress(){if(confirm(currentLang==='ar'?'⚠️ مسح كل الحلول والدرجات المحفوظة؟':'⚠️ Clear all saved solutions and scores?')){localStorage.removeItem(STORAGE_KEY);location.reload()}}
+
+// ==================== RENDER ====================
+function renderExam(){
+  const c=document.getElementById('exam-content');let html='',sec=0;
+  QUESTIONS.forEach((q,i)=>{
+    if(q.section!==sec){sec=q.section;html+='<div class="section-head">'+(sec===1?(currentLang==='ar'?'📘 القسم الأول: مسائل الكتاب (99 - 103) — 10 درجات لكل مسألة':'📘 Part One: Textbook Problems (99-103) — 10 pts each'):(currentLang==='ar'?'📗 القسم الثاني: مسائل مشابهة (أساسات كسرية ومركبة) — 10 درجات لكل مسألة':'📗 Part Two: Similar Problems (fractional & composite bases) — 10 pts each'))+'</div>';}
+    html+='<div class="q-card" id="card-'+i+'">';
+    html+='<div class="flex flex-wrap items-center justify-between gap-2 mb-3"><span class="bg-violet-700 text-white font-extrabold rounded-full w-9 h-9 flex items-center justify-center">'+(i+1)+'</span><span class="text-xs font-bold text-violet-700 bg-violet-50 border border-violet-200 rounded-full px-3 py-1">10 '+(currentLang==='ar'?'درجات':'pts')+'</span></div>';
+    html+='<div class="q-statement arabic-math">'+q.statement[currentLang]+'</div>';
+    if(q.svg)html+='<div class="graph-container">'+svgGraphs[q.svg]+'</div>';
+    html+='<p class="text-sm font-bold text-violet-800 mt-3 mb-1">✍️ '+(currentLang==='ar'?'الحل:':'Solution:')+'</p>';
+    html+='<textarea class="answer-area" id="sol-'+i+'" placeholder="'+(currentLang==='ar'?'اكتب حلّك: (1) وحّد الأساس ... (2) ساوِ الأسّين ... (3) حل المعادلة ... (4) تحقق':'Write: (1) common base ... (2) equate exponents ... (3) solve ... (4) verify')+'"></textarea>';
+    html+='<div class="flex flex-wrap gap-2 mt-3 no-print">';
+    CHECKLIST.forEach((ch,j)=>{const ck=(studentChecks[i]&&studentChecks[i][j])?'checked':'';html+='<label class="check-item"><input type="checkbox" data-q="'+i+'" data-c="'+j+'" '+ck+'> '+ch[currentLang]+'</label>';});
+    html+='</div>';
+    html+='<div class="flex flex-wrap items-center justify-between gap-3 mt-4 no-print">';
+    html+='<button onclick="toggleModel('+i+')" class="bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded-lg font-bold transition">🔑 '+(currentLang==='ar'?'الحل النموذجي':'Model solution')+'</button>';
+    html+='<label class="flex items-center gap-2 text-sm font-bold text-violet-800">'+(currentLang==='ar'?'الدرجة الممنوحة:':'Score:')+' <input type="number" min="0" max="10" step="0.5" class="score-input" id="score-'+i+'" data-q="'+i+'"> / 10</label>';
+    html+='</div>';
+    html+='<div class="model-box" id="model-'+i+'" style="display:none">';
+    html+='<p class="font-extrabold text-green-800 mb-2">'+(currentLang==='ar'?'✅ الحل النموذجي:':'✅ Model solution:')+'</p>';
+    q.steps.forEach((s,k)=>{html+='<div class="model-step"><span class="step-no">'+(k+1)+'</span>'+s[currentLang]+'</div>';});
+    html+='<div class="final-answer">'+q.final[currentLang]+'</div>';
+    html+='<p class="text-xs text-green-700 mt-2 font-bold">'+q.check[currentLang]+'</p></div></div>';
+  });
+  c.innerHTML=html;
+  QUESTIONS.forEach((q,i)=>{const ta=document.getElementById('sol-'+i);if(ta&&studentAnswers[i])ta.value=studentAnswers[i];const sc=document.getElementById('score-'+i);if(sc&&studentScores[i]!==undefined&&studentScores[i]!=='')sc.value=studentScores[i];});
+  attachListeners();
+}
+
+function attachListeners(){
+  const c=document.getElementById('exam-content');
+  c.addEventListener('input',e=>{
+    if(e.target.classList.contains('answer-area')){studentAnswers[e.target.id.replace('sol-','')]=e.target.value;saveState(false);}
+    if(e.target.classList.contains('score-input')){studentScores[e.target.dataset.q]=e.target.value;saveState(false);}
+  });
+  c.addEventListener('change',e=>{
+    if(e.target.type==='checkbox'){const i=e.target.dataset.q,j=e.target.dataset.c;if(!studentChecks[i])studentChecks[i]={};studentChecks[i][j]=e.target.checked;saveState(true);}
+    if(e.target.classList.contains('score-input')||e.target.classList.contains('answer-area'))saveState(true);
+  });
+}
+
+function toggleModel(i){const m=document.getElementById('model-'+i);m.style.display=(m.style.display==='none')?'block':'none';}
+function toggleAllModels(){modelsVisible=!modelsVisible;QUESTIONS.forEach((q,i)=>{document.getElementById('model-'+i).style.display=modelsVisible?'block':'none';});}
+
+// ==================== GRADING ====================
+function gradeExam(){
+  let total=0;const rows=[];
+  QUESTIONS.forEach((q,i)=>{let v=parseFloat(studentScores[i]);if(isNaN(v))v=0;v=Math.max(0,Math.min(10,v));total+=v;rows.push({i:i,score:v,hasWork:(studentAnswers[i]||'').trim().length>0});});
+  document.getElementById('res-total').textContent=total+' / 100';
+  document.getElementById('res-name').textContent=document.getElementById('studentName').value||(currentLang==='ar'?'طالب':'Student');
+  document.getElementById('res-date').textContent=document.getElementById('examDate').value||new Date().toLocaleDateString();
+  document.getElementById('success-percent').textContent=total+'%';
+  const badge=document.getElementById('success-badge');let cls,txt;
+  if(total>=90){cls='bg-green-100 text-green-800';txt=currentLang==='ar'?'🌟 ممتاز جداً':'🌟 Outstanding';}
+  else if(total>=75){cls='bg-yellow-100 text-yellow-800';txt=currentLang==='ar'?'👏 ممتاز':'👏 Excellent';}
+  else if(total>=50){cls='bg-blue-100 text-blue-800';txt=currentLang==='ar'?'👍 جيد':'👍 Good';}
+  else{cls='bg-red-100 text-red-800';txt=currentLang==='ar'?'💪 يحتاج تحسين':'💪 Needs improvement';}
+  badge.className='inline-block px-4 py-1 rounded-full font-bold '+cls;badge.textContent=txt;
+  document.getElementById('per-problem-scores').innerHTML=rows.map(r=>'<div class="flex justify-between items-center p-2 bg-white rounded-lg border border-gray-200"><span class="font-bold text-gray-700">'+(currentLang==='ar'?'المسألة':'Problem')+' '+(r.i+1)+(r.hasWork?'':(currentLang==='ar'?' ⚠️ بدون كتابة حل':' ⚠️ no written work'))+'</span><span class="font-extrabold text-violet-700">'+r.score+' / 10</span></div>').join('');
+  document.getElementById('results-panel').classList.remove('hidden');
+  document.getElementById('results-panel').scrollIntoView({behavior:'smooth'});
+}
+
+// ==================== EMAIL ====================
+function sendResultsToEmail(){
+  const btn=document.getElementById('sendEmailBtn'),status=document.getElementById('emailStatus');
+  btn.disabled=true;btn.textContent=currentLang==='ar'?'⏳ جاري الإرسال...':'⏳ Sending...';
+  const name=document.getElementById('studentName').value||'N/A',klass=document.getElementById('studentClass').value||'N/A',date=document.getElementById('examDate').value||new Date().toLocaleDateString(),total=document.getElementById('res-total').textContent;
+  let html='<div style="font-family:Arial;direction:rtl"><h2>📝 امتحان كتابي: المعادلات الأسية - رياضيات 12 عام</h2><p><b>الاسم:</b> '+name+' | <b>الشعبة:</b> '+klass+' | <b>التاريخ:</b> '+date+'</p><p><b>المجموع:</b> '+total+'</p><hr>';
+  QUESTIONS.forEach((q,i)=>{
+    const ans=(studentAnswers[i]||'(لم يُكتب حل)').replace(/\n/g,'<br>');
+    const sc=(studentScores[i]!==undefined&&studentScores[i]!=='')?studentScores[i]:'—';
+    html+='<div style="border:1px solid #ccc;border-radius:8px;padding:10px;margin:10px 0"><p style="background:#ede9fe;padding:6px;border-radius:6px"><b>س'+(i+1)+':</b> '+q.statement.ar.replace(/<[^>]+>/g,'')+' <span style="color:#b45309">(الدرجة: '+sc+'/10)</span></p><p><b>حل الطالب:</b><br>'+ans+'</p><p style="color:#166534"><b>الحل النموذجي:</b> '+q.steps.map(s=>s.ar).join(' ← ')+' ⇒ <b>'+q.final.ar+'</b></p></div>';
+  });
+  html+='</div>';
+  emailjs.send(SERVICE_ID,TEMPLATE_ID,{to_email:TARGET_EMAIL,student_name:name,student_class:klass,exam_date:date,total_score:total,success_rate:total+'%',grade:document.getElementById('success-badge').textContent,answers_table:html})
+  .then(()=>{status.textContent=currentLang==='ar'?'✅ أُرسلت الإجابات والدرجات بنجاح':'✅ Sent successfully';status.style.color='#16a34a';btn.disabled=false;})
+  .catch(err=>{status.textContent=currentLang==='ar'?'❌ فشل الإرسال':'❌ Failed';status.style.color='#dc2626';btn.disabled=false;console.error(err);});
+}
+
+// ==================== TIMER / LANG / INIT ====================
+function updateTimerDisplay(){const m=Math.floor(timeRemaining/60),s=timeRemaining%60;document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
+function startTimer(){updateTimerDisplay();timerInterval=setInterval(()=>{timeRemaining--;updateTimerDisplay();if(timeRemaining%60===0)saveState(false);if(timeRemaining<=600)document.getElementById('timer').classList.add('timer-warning');if(timeRemaining<=0){clearInterval(timerInterval);alert(currentLang==='ar'?'⏰ انتهى الوقت!':"⏰ Time's up!");}},1000);}
+function setLanguage(lang){currentLang=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.getElementById('btn-ar').classList.toggle('active',lang==='ar');document.getElementById('btn-en').classList.toggle('active',lang==='en');document.body.classList.toggle('en-mode',lang==='en');document.querySelectorAll('[data-ar]').forEach(el=>{el.textContent=el.getAttribute('data-'+lang)});renderExam();saveState(false);}
+window.addEventListener('DOMContentLoaded',()=>{
+  const saved=loadState();
+  if(saved){currentLang=saved.lang||'ar';studentAnswers=saved.answers||{};studentScores=saved.scores||{};studentChecks=saved.checks||{};timeRemaining=(saved.timeRemaining!==undefined)?saved.timeRemaining:TOTAL_TIME;document.getElementById('studentName').value=saved.studentName||'';document.getElementById('studentClass').value=saved.studentClass||'';document.getElementById('examDate').value=saved.examDate||'';}
+  document.getElementById('btn-ar').classList.toggle('active',currentLang==='ar');
+  document.getElementById('btn-en').classList.toggle('active',currentLang==='en');
+  document.body.classList.toggle('en-mode',currentLang==='en');
+  document.documentElement.lang=currentLang;document.documentElement.dir=currentLang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-ar]').forEach(el=>{el.textContent=el.getAttribute('data-'+currentLang)});
+  ['studentName','studentClass','examDate'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('input',()=>saveState(false));el.addEventListener('blur',()=>saveState(true));});
+  renderExam();
+  document.getElementById('method-holder').innerHTML=svgGraphs.method_steps;
+  startTimer();
+});
+window.addEventListener('beforeunload',()=>saveState(false));
+</script>
+</body>
+</html>
